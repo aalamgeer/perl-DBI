@@ -2,12 +2,12 @@
 use DBI;
 
 $dbh = DBI->connect("DBI:mysql:practice", "root", "") or die $DBI::errstr;
-$sth = $dbh->prepare("INSERT INTO dept (deptip, deptname) (?,?)");
-$dptip = 52;
-$dptname = "Develpment";
+$sth = $dbh->prepare("INSERT INTO dept (deptip, deptname) values (?,?)");
+$dptip = 53;
+$dptname = "Research";
 $sth->execute($dptip,$dptname) or die $DBI::errstr;
 $sth->finish();
-$sth->commit or die $DBI::errstr;
+$dbh->commit or die $DBI::errstr;
 
 
 
