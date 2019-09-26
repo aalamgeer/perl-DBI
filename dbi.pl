@@ -10,7 +10,7 @@ my $password = "";
 
 my $dbh = DBI->connect($dsn, $userid, $password ) or die $DBI::errstr;
 
-my $sth = $dbh->prepare("INSERT INTO dept (deptip, deptname) values(60, 'Chamical')");
+my $sth = $dbh->prepare("INSERT INTO dept ( deptname) values( 'Chamical')");
 
 $sth->execute() or die $DBI::errstr;
 $sth->finish();
