@@ -15,5 +15,6 @@ my $sth = $dbh->prepare("INSERT INTO dept ( deptname) values( 'Chamical')");
 $sth->execute() or die $DBI::errstr;
 $sth->finish();
 $dbh->commit or die $DBI::errstr; 
+$dbh->rollback or die $DBI::errstr;
 
 
